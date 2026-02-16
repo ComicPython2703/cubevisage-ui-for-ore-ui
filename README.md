@@ -2,114 +2,57 @@
   <img src="https://raw.githubusercontent.com/wisebreeze/cubevisage-ui-for-ore-ui/main/src/sources/pack_icon.png" width="150" alt="CubeVisage Icon">
 </div>
 
-# CubeVisage UI Ore UI Edition
+# 立方之窗 UI Ore UI 版本
 
 [![GitHub release](https://img.shields.io/github/v/release/wisebreeze/cubevisage-ui-for-ore-ui)](https://github.com/wisebreeze/cubevisage-ui-for-ore-ui/releases)
 [![GitHub stars](https://img.shields.io/github/stars/wisebreeze/cubevisage-ui-for-ore-ui)](https://github.com/wisebreeze/cubevisage-ui-for-ore-ui/stargazers)
-[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-[![Build Workflow](https://github.com/wisebreeze/cubevisage-ui-for-ore-ui/actions/workflows/deploy.yml/badge.svg)](https://github.com/wisebreeze/cubevisage-ui-for-ore-ui/actions/workflows/deploy.yml)
+[![许可证](https://img.shields.io/badge/许可证-MIT-green)](LICENSE)
+[![(工作流) 构建](https://github.com/wisebreeze/cubevisage-ui-for-ore-ui/actions/workflows/deploy.yml/badge.svg)](https://github.com/wisebreeze/cubevisage-ui-for-ore-ui/actions/workflows/deploy.yml)
 
-[English](/README.md) / [简体中文](/README.zh-CN.md) / [繁體中文](/README.zh-TW.md)
+[English](/README.md) / [简体中文](/README.zh-CN.md) / [繁体中文](/README.zh-TW.md)
 
-CubeVisage UI Ore UI Edition is a user interface built on top of Ore UI.
+立方之窗 UI Ore UI 版本是一个基于 Ore UI 开发的用户界面。
 
-* **Simple:** CubeVisage UI makes improving the user experience effortless. No coding background is required to enhance the Ore-UI experience.
-* **Multi-platform:** CubeVisage UI supports multiple platforms, delivering an immersive experience for users.
+* **简单：** 立方之窗 UI 使改进用户体验。无需代码基础，即可增强 Ore UI 的体验。
+* **多端部署：** 立方之窗 UI 适用于多平台，为用户带来沉浸体验。
 
-## Deployment
+## 部署
 
-1. Fork this repository.
-2. Upload the original game packages (APK / IPA / APPX) to the root of the `src/` folder.
-3. Go to [Actions → Build & Release → Run workflow](https://github.com/wisebreeze/cubevisage-ui-for-ore-ui/actions/workflows/deploy.yml) and trigger the workflow manually.
-4. Wait about 40 seconds, then download the signed packages from the [Releases](https://github.com/wisebreeze/cubevisage-ui-for-ore-ui/releases) page.
-5. Sign the packages if necessary.
-6. Install.
+1. Fork 本仓库。
+2. 将原始游戏安装包上传到 `src/` 根目录。
+3. 进入 [Actions → Build & Release → Run workflow](https://github.com/wisebreeze/cubevisage-ui-for-ore-ui/actions/workflows/deploy.yml) 手动运行 deploy 工作流。
+4. 等待大约 40 秒后，在 [Releases](https://github.com/wisebreeze/cubevisage-ui-for-ore-ui/releases) 页面下载安装包。
+5. 签名安装包。
+6. 安装。
 
-## Auto-Deploy
+## 自动部署
 
-Create a repository variable:
+新建仓库变量：
 
-| Variable      | Value |
-|---------------|-------|
-| `AUTO_DEPLOY` | `true`|
+|变量名|值|
+|---|---|
+|`AUTO_DEPLOY`|`true`|
 
-The workflow will automatically trigger whenever files inside the `src/` directory change.
+当 `src/` 目录发生变动时，工作流将自动触发。
 
-## Local Deployment
+## 本地部署
 
-We also provide a local deployment option for CubeVisage UI Ore UI Edition.
+我们为您提供了本地部署 立方之窗 UI Ore UI 版本。  
+在进行操作前，请检测您的终端是否安装 node.js 并且 node.js 版本 >= 20。  
+在您的终端输入 `node -v` 检查 node.js 版本是否 >= 20。 
 
-Before proceeding, ensure **Node.js ≥ 20** is installed.  
-Check your Node.js version with `node -v`.
+1. 下载本仓库代码。
+2. 解压压缩包。
+3. 打开终端访问解压后的文件夹。
+4. 输入 `npm start`。
+5. 等待大约 40 秒后，访问项目根目录的 `dist` 文件夹。
+6. 签名安装包。
+7. 安装。
 
-1. Download the repository code.
-2. Extract the archive.
-3. Open a terminal and navigate to the extracted folder.
-4. Run `npm start`.
-5. After approximately 40 seconds, find the output in the `dist/` folder at the project root.
-6. Sign the packages if necessary.
-7. Install.
+## 浏览器调试
 
-## Browser Debugging
+我们为您提供了在线调试 立方之窗 UI，以快速预览更改。  
+在进行操作前，请检测您的终端是否安装 node.js 并且 node.js 版本 >= 20。  
+在您的终端输入 `node -v` 检查 node.js 版本是否 >= 20。 
 
-We provide online debugging for CubeVisage UI to quickly preview changes.  
-Before proceeding, please check if Node.js is installed on your terminal and ensure the Node.js version is ≥ 20.  
-Enter node -v in your terminal to verify if the Node.js version is ≥ 20.  
-
-Before debugging, copy the .lang files from resource_packs/oreui/texts to the src/texts folder,  
-and copy the .lang files from gui/dist/hbui/ to the src/texts folder. The file structure is as follows:  
-
-```text
-cubevisage-ui-for-ore-ui/
-├── package.json
-├── dist/ # Output directory
-│   └── xxx.apk
-└── src/
-     ├── texts/ # Translation files
-     └── xxx.apk # Any installation package
-```
-
-1. Download the repository code.
-2. Extract the archive.
-3. Open a terminal and navigate to the extracted folder.
-4. Run `npm run dev`.
-5. Visit [0.0.0.0:8800](http://0.0.0.0:8800) in your browser.
-
-To exit hot-reload, press `q` then Enter in the terminal.
-
-## Update Fork & Sync with Upstream
-
-```bash
-git remote add upstream https://github.com/wisebreeze/cubevisage-ui-for-ore-ui.git
-git fetch upstream
-git checkout main
-git merge upstream/main
-git push origin main
-```
-
-## Configuration
-
-Before running the workflow, edit the `config.json` file in the project root to customize the build.
-
-## Contributing
-
-This repository aims to continue developing the CubeVisage ecosystem and improve the user experience.
-
-We appreciate community contributions for bug fixes and enhancements.
-
-### Code of Conduct
-
-- Do not add malicious code.  
-- Do not violate the license terms below.
-
-## Changelog
-
-For details, see [CHANGELOG.md](./CHANGELOG.md).
-
-## License
-
-- Licensed under the MIT License. In case of any conflict with the following terms, the terms below shall prevail.
-- Attribution to the original author must be retained.
-- This repository is not affiliated with any company or studio.
-- The works mentioned in this repository are used for identification purposes only and carry no additional meaning.
-- All rights are reserved by the original author.
+在进行调试前，请将 `resource_packs/oreui/texts` 的 .lang 文件复制到 `src/texts` 文件夹中，  
